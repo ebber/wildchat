@@ -2,6 +2,9 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
+var http = require("http");
+
+var port = process.env.PORT || 3000;
 
 app.get('/listFlags', function (req, res) {
 	   fs.readFile( __dirname + "/" + "flags.json", 'utf8', function (err, data) {
